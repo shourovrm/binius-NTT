@@ -1,0 +1,13 @@
+# Don't upload build artifacts or git metadata
+build/
+.git/
+.gitignore
+.gitmodules
+*.md
+!README.md
+*.o
+*.a
+__pycache__/
+*.pyc
+.vscode/
+.idea/

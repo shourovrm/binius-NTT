@@ -1,0 +1,441 @@
+Randomness seeded to: 4181667234
+Testing for log input size: 1
+Testing for log input size: 2
+Testing for log input size: 3
+Testing for log input size: 4
+Testing for log input size: 5
+Testing for log input size: 6
+Testing for log input size: 7
+Testing for log input size: 8
+Testing for log input size: 9
+Testing for log input size: 10
+Testing for log input size: 11
+Testing for log input size: 12
+Testing for log input size: 13
+Testing for log input size: 14
+Testing for log input size: 15
+Testing for log input size: 16
+Testing for log input size: 17
+Testing for log input size: 18
+Testing for log input size: 19
+Testing for log input size: 20
+Testing for log input size: 21
+Testing for log input size: 22
+Testing for log input size: 23
+Testing for log input size: 24
+Testing for log input size: 25
+Testing for log input size: 26
+Testing for log input size: 27
+49.826 s: NTTBB31 all input lengths
+2.665 s: NTTBB31 round trip
+0.000 s: GPU capability check
+Kernel 0 launch configuration blocks: (1, 1, 1) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 1)
+Comparing outputs of log_h: 1 log_rate: 0
+Kernel 0 launch configuration blocks: (2, 1, 1) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 2)
+Comparing outputs of log_h: 2 log_rate: 0
+Kernel 0 launch configuration blocks: (4, 1, 1) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 3)
+Comparing outputs of log_h: 3 log_rate: 0
+Kernel 0 launch configuration blocks: (8, 1, 1) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 4)
+Comparing outputs of log_h: 4 log_rate: 0
+Kernel 0 launch configuration blocks: (16, 1, 1) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 5)
+Comparing outputs of log_h: 5 log_rate: 0
+Kernel 0 launch configuration blocks: (32, 1, 1) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 6)
+Comparing outputs of log_h: 6 log_rate: 0
+Kernel 0 launch configuration blocks: (64, 1, 1) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 7)
+Comparing outputs of log_h: 7 log_rate: 0
+Kernel 0 launch configuration blocks: (128, 1, 1) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 8)
+Comparing outputs of log_h: 8 log_rate: 0
+Kernel 0 launch configuration blocks: (256, 1, 1) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 9 log_rate: 0
+Kernel 0 launch configuration blocks: (512, 1, 1) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 10)
+Comparing outputs of log_h: 10 log_rate: 0
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 11 log_rate: 0
+Kernel 1 launch configuration blocks: (1, 1024, 1) grids: (1, 2, 1)
+Kernel 1 (..., start_stage = 11, end_stage = 12)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (2, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 12 log_rate: 0
+Kernel 1 launch configuration blocks: (2, 512, 1) grids: (1, 4, 1)
+Kernel 1 (..., start_stage = 11, end_stage = 13)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (4, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 13 log_rate: 0
+Kernel 1 launch configuration blocks: (4, 256, 1) grids: (1, 8, 1)
+Kernel 1 (..., start_stage = 11, end_stage = 14)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (8, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 14 log_rate: 0
+Kernel 1 launch configuration blocks: (8, 128, 1) grids: (1, 16, 1)
+Kernel 1 (..., start_stage = 11, end_stage = 15)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (16, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 15 log_rate: 0
+Kernel 1 launch configuration blocks: (16, 64, 1) grids: (1, 32, 1)
+Kernel 1 (..., start_stage = 11, end_stage = 16)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (32, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 16 log_rate: 0
+Kernel 1 launch configuration blocks: (32, 32, 1) grids: (1, 64, 1)
+Kernel 1 (..., start_stage = 11, end_stage = 17)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (64, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 17 log_rate: 0
+Kernel 1 launch configuration blocks: (64, 16, 1) grids: (1, 128, 1)
+Kernel 1 (..., start_stage = 11, end_stage = 18)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (128, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 18 log_rate: 0
+Kernel 1 launch configuration blocks: (128, 8, 1) grids: (1, 256, 1)
+Kernel 1 (..., start_stage = 11, end_stage = 19)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (256, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 19 log_rate: 0
+Kernel 1 launch configuration blocks: (256, 4, 1) grids: (1, 512, 1)
+Kernel 1 (..., start_stage = 11, end_stage = 20)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (512, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 20 log_rate: 0
+Kernel 1 launch configuration blocks: (512, 2, 1) grids: (1, 1024, 1)
+Kernel 1 (..., start_stage = 11, end_stage = 21)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (1024, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 21 log_rate: 0
+Kernel 1 launch configuration blocks: (1024, 1, 1) grids: (1, 2048, 1)
+Kernel 1 (..., start_stage = 11, end_stage = 22)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (2048, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 22 log_rate: 0
+Kernel 2 launch configuration blocks: (1, 1024, 1) grids: (1, 1, 4096)
+Kernel 2 (..., start_stage = 22, end_stage = 23)
+Kernel 1 launch configuration blocks: (1024, 1, 1) grids: (1, 2048, 2)
+Kernel 1 (..., start_stage = 11, end_stage = 22)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (4096, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 23 log_rate: 0
+Kernel 2 launch configuration blocks: (2, 512, 1) grids: (1, 1, 8192)
+Kernel 2 (..., start_stage = 22, end_stage = 24)
+Kernel 1 launch configuration blocks: (1024, 1, 1) grids: (1, 2048, 4)
+Kernel 1 (..., start_stage = 11, end_stage = 22)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (8192, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 24 log_rate: 0
+Kernel 2 launch configuration blocks: (4, 256, 1) grids: (1, 1, 16384)
+Kernel 2 (..., start_stage = 22, end_stage = 25)
+Kernel 1 launch configuration blocks: (1024, 1, 1) grids: (1, 2048, 8)
+Kernel 1 (..., start_stage = 11, end_stage = 22)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (16384, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 25 log_rate: 0
+Kernel 2 launch configuration blocks: (8, 128, 1) grids: (1, 1, 32768)
+Kernel 2 (..., start_stage = 22, end_stage = 26)
+Kernel 1 launch configuration blocks: (1024, 1, 1) grids: (1, 2048, 16)
+Kernel 1 (..., start_stage = 11, end_stage = 22)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (32768, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 26 log_rate: 0
+Kernel 2 launch configuration blocks: (16, 64, 1) grids: (1, 2, 32768)
+Kernel 2 (..., start_stage = 22, end_stage = 27)
+Kernel 1 launch configuration blocks: (1024, 1, 1) grids: (1, 2048, 32)
+Kernel 1 (..., start_stage = 11, end_stage = 22)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (65536, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 27 log_rate: 0
+Kernel 2 launch configuration blocks: (32, 32, 1) grids: (1, 4, 32768)
+Kernel 2 (..., start_stage = 22, end_stage = 28)
+Kernel 1 launch configuration blocks: (1024, 1, 1) grids: (1, 2048, 64)
+Kernel 1 (..., start_stage = 11, end_stage = 22)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (131072, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 28 log_rate: 0
+67.765 s: Additive NTT r 0
+Kernel 0 launch configuration blocks: (1, 1, 4) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 1)
+Comparing outputs of log_h: 1 log_rate: 2
+Kernel 0 launch configuration blocks: (2, 1, 4) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 2)
+Comparing outputs of log_h: 2 log_rate: 2
+Kernel 0 launch configuration blocks: (4, 1, 4) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 3)
+Comparing outputs of log_h: 3 log_rate: 2
+Kernel 0 launch configuration blocks: (8, 1, 4) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 4)
+Comparing outputs of log_h: 4 log_rate: 2
+Kernel 0 launch configuration blocks: (16, 1, 4) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 5)
+Comparing outputs of log_h: 5 log_rate: 2
+Kernel 0 launch configuration blocks: (32, 1, 4) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 6)
+Comparing outputs of log_h: 6 log_rate: 2
+Kernel 0 launch configuration blocks: (64, 1, 4) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 7)
+Comparing outputs of log_h: 7 log_rate: 2
+Kernel 0 launch configuration blocks: (128, 1, 4) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 8)
+Comparing outputs of log_h: 8 log_rate: 2
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (1, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 9 log_rate: 2
+Kernel 1 launch configuration blocks: (1, 256, 4) grids: (1, 2, 1)
+Kernel 1 (..., start_stage = 9, end_stage = 10)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (2, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 10 log_rate: 2
+Kernel 1 launch configuration blocks: (2, 128, 4) grids: (1, 4, 1)
+Kernel 1 (..., start_stage = 9, end_stage = 11)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (4, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 11 log_rate: 2
+Kernel 1 launch configuration blocks: (4, 64, 4) grids: (1, 8, 1)
+Kernel 1 (..., start_stage = 9, end_stage = 12)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (8, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 12 log_rate: 2
+Kernel 1 launch configuration blocks: (8, 32, 4) grids: (1, 16, 1)
+Kernel 1 (..., start_stage = 9, end_stage = 13)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (16, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 13 log_rate: 2
+Kernel 1 launch configuration blocks: (16, 16, 4) grids: (1, 32, 1)
+Kernel 1 (..., start_stage = 9, end_stage = 14)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (32, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 14 log_rate: 2
+Kernel 1 launch configuration blocks: (32, 8, 4) grids: (1, 64, 1)
+Kernel 1 (..., start_stage = 9, end_stage = 15)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (64, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 15 log_rate: 2
+Kernel 1 launch configuration blocks: (64, 4, 4) grids: (1, 128, 1)
+Kernel 1 (..., start_stage = 9, end_stage = 16)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (128, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 16 log_rate: 2
+Kernel 1 launch configuration blocks: (128, 2, 4) grids: (1, 256, 1)
+Kernel 1 (..., start_stage = 9, end_stage = 17)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (256, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 17 log_rate: 2
+Kernel 1 launch configuration blocks: (256, 1, 4) grids: (1, 512, 1)
+Kernel 1 (..., start_stage = 9, end_stage = 18)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (512, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 18 log_rate: 2
+Kernel 2 launch configuration blocks: (1, 256, 4) grids: (1, 1, 1024)
+Kernel 2 (..., start_stage = 18, end_stage = 19)
+Kernel 1 launch configuration blocks: (256, 1, 4) grids: (1, 512, 2)
+Kernel 1 (..., start_stage = 9, end_stage = 18)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (1024, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 19 log_rate: 2
+Kernel 2 launch configuration blocks: (2, 128, 4) grids: (1, 1, 2048)
+Kernel 2 (..., start_stage = 18, end_stage = 20)
+Kernel 1 launch configuration blocks: (256, 1, 4) grids: (1, 512, 4)
+Kernel 1 (..., start_stage = 9, end_stage = 18)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (2048, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 20 log_rate: 2
+Kernel 2 launch configuration blocks: (4, 64, 4) grids: (1, 1, 4096)
+Kernel 2 (..., start_stage = 18, end_stage = 21)
+Kernel 1 launch configuration blocks: (256, 1, 4) grids: (1, 512, 8)
+Kernel 1 (..., start_stage = 9, end_stage = 18)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (4096, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 21 log_rate: 2
+Kernel 2 launch configuration blocks: (8, 32, 4) grids: (1, 1, 8192)
+Kernel 2 (..., start_stage = 18, end_stage = 22)
+Kernel 1 launch configuration blocks: (256, 1, 4) grids: (1, 512, 16)
+Kernel 1 (..., start_stage = 9, end_stage = 18)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (8192, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 22 log_rate: 2
+Kernel 2 launch configuration blocks: (16, 16, 4) grids: (1, 1, 16384)
+Kernel 2 (..., start_stage = 18, end_stage = 23)
+Kernel 1 launch configuration blocks: (256, 1, 4) grids: (1, 512, 32)
+Kernel 1 (..., start_stage = 9, end_stage = 18)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (16384, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 23 log_rate: 2
+Kernel 2 launch configuration blocks: (32, 8, 4) grids: (1, 1, 32768)
+Kernel 2 (..., start_stage = 18, end_stage = 24)
+Kernel 1 launch configuration blocks: (256, 1, 4) grids: (1, 512, 64)
+Kernel 1 (..., start_stage = 9, end_stage = 18)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (32768, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 24 log_rate: 2
+Kernel 2 launch configuration blocks: (64, 4, 4) grids: (1, 2, 32768)
+Kernel 2 (..., start_stage = 18, end_stage = 25)
+Kernel 1 launch configuration blocks: (256, 1, 4) grids: (1, 512, 128)
+Kernel 1 (..., start_stage = 9, end_stage = 18)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (65536, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 25 log_rate: 2
+Kernel 2 launch configuration blocks: (128, 2, 4) grids: (1, 4, 32768)
+Kernel 2 (..., start_stage = 18, end_stage = 26)
+Kernel 1 launch configuration blocks: (256, 1, 4) grids: (1, 512, 256)
+Kernel 1 (..., start_stage = 9, end_stage = 18)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (131072, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 26 log_rate: 2
+Kernel 2 launch configuration blocks: (256, 1, 4) grids: (1, 8, 32768)
+Kernel 2 (..., start_stage = 18, end_stage = 27)
+Kernel 1 launch configuration blocks: (256, 1, 4) grids: (1, 512, 512)
+Kernel 1 (..., start_stage = 9, end_stage = 18)
+Kernel 0 launch configuration blocks: (256, 1, 4) grids: (262144, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 9)
+Comparing outputs of log_h: 27 log_rate: 2
+102.142 s: Additive NTT r 2
+Kernel 2 launch configuration blocks: (64, 16, 1) grids: (1, 8, 32768)
+Kernel 2 (..., start_stage = 22, end_stage = 29)
+Kernel 1 launch configuration blocks: (1024, 1, 1) grids: (1, 2048, 128)
+Kernel 1 (..., start_stage = 11, end_stage = 22)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (262144, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 29 log_rate: 0
+Kernel 2 launch configuration blocks: (128, 8, 1) grids: (1, 16, 32768)
+Kernel 2 (..., start_stage = 22, end_stage = 30)
+Kernel 1 launch configuration blocks: (1024, 1, 1) grids: (1, 2048, 256)
+Kernel 1 (..., start_stage = 11, end_stage = 22)
+Kernel 0 launch configuration blocks: (1024, 1, 1) grids: (524288, 1, 1)
+Kernel 0 (..., start_stage = 0, end_stage = 11)
+Comparing outputs of log_h: 30 log_rate: 0
+202.575 s: Additive NTT r 0 large inputs
+===============================================================================
+All tests passed (144 assertions in 6 test cases)
+
+Randomness seeded to: 3952527046
+0.000 s: FanPaarTowerField 16 multiplications
+0.000 s: FanPaarTowerField 8 multiplications
+0.000 s: FanPaarTowerField 32 multiplications
+0.000 s: FanPaarTowerField 32 squares
+0.000 s: FanPaarTowerField 32b inverses
+0.000 s: Bitsliced 32 multiplications
+0.000 s: Bitsliced 128-bit multiplications
+Launch configuration: GRIDS: 16384, BLOCKS: 1024
+1.641 s: mul_binary_tower_32b_simd_ker
+Launch configuration: GRIDS: 16384, BLOCKS: 1024
+0.365 s: mul_binary_tower_16b_simd_ker
+Launch configuration: GRIDS: 16384, BLOCKS: 1024
+0.345 s: mul_binary_tower_8b_simd_ker
+Launch configuration: GRIDS: 16384, BLOCKS: 1024
+0.740 s: mul_baby_bear_ker
+Launch configuration: GRIDS: 16384, BLOCKS: 1024
+0.879 s: inv_binary_tower_32b_ker
+Launch configuration: GRIDS: 16384, BLOCKS: 1024
+0.700 s: inv_baby_bear_ker
+0.000 s: interleave_32b
+0.000 s: interleave
+0.000 s: mul_binary_tower_32b_simd<0>
+0.000 s: mul_binary_tower_32b_simd<2>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+finite_field_tests is a Catch2 v3.5.0 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+mul_binary_tower_32b_simd<5>
+-------------------------------------------------------------------------------
+/kaggle/working/binius-NTT/binius-NTT/src/ulvt/finite_fields/tests/tests.cu:86
+...............................................................................
+
+benchmark name                       samples       iterations    est run time
+                                     mean          low mean      high mean
+                                     std dev       low std dev   high std dev
+-------------------------------------------------------------------------------
+mul_binary_tower_32b_simd cpu                  100             1     5.96488 s 
+                                        58.7814 ms    58.5353 ms    59.3692 ms 
+                                        1.82494 ms    894.106 us    3.62055 ms 
+                                                                               
+mul_binary_tower cpu                           100             1    887.853 ms 
+                                        8.83488 ms    8.80249 ms    8.87818 ms 
+                                        189.735 us    151.517 us    285.595 us 
+                                                                               
+
+11.728 s: mul_binary_tower_32b_simd<5>
+-------------------------------------------------------------------------------
+mul_binary_tower_32b_bitsliced_unrolled
+-------------------------------------------------------------------------------
+/kaggle/working/binius-NTT/binius-NTT/src/ulvt/finite_fields/tests/tests.cu:115
+...............................................................................
+
+benchmark name                       samples       iterations    est run time
+                                     mean          low mean      high mean
+                                     std dev       low std dev   high std dev
+-------------------------------------------------------------------------------
+mul_binary_tower_32b_bitsliced_unr-                                            
+olled cpu                                      100             1    22.1811 ms 
+                                        216.013 us    215.124 us    217.238 us 
+                                        5.26685 us    4.19501 us    7.25602 us 
+                                                                               
+
+1.553 s: mul_binary_tower_32b_bitsliced_unrolled
+-------------------------------------------------------------------------------
+mul_binary_tower_128b_bitsliced_unrolled
+-------------------------------------------------------------------------------
+/kaggle/working/binius-NTT/binius-NTT/src/ulvt/finite_fields/tests/tests.cu:172
+...............................................................................
+
+benchmark name                       samples       iterations    est run time
+                                     mean          low mean      high mean
+                                     std dev       low std dev   high std dev
+-------------------------------------------------------------------------------
+mul_binary_tower_128b_bitsliced_un-                                            
+rolled cpu                                     100             1    209.216 ms 
+                                        2.09103 ms    2.07672 ms    2.10893 ms 
+                                        81.1327 us    67.7507 us    101.714 us 
+                                                                               
+
+1.798 s: mul_binary_tower_128b_bitsliced_unrolled
+-------------------------------------------------------------------------------
+mul_bb31
+-------------------------------------------------------------------------------
+/kaggle/working/binius-NTT/binius-NTT/src/ulvt/finite_fields/tests/tests.cu:221
+...............................................................................
+
+benchmark name                       samples       iterations    est run time
+                                     mean          low mean      high mean
+                                     std dev       low std dev   high std dev
+-------------------------------------------------------------------------------
+mul_bb31 cpu                                   100             1    17.1525 ms 
+                                        168.847 us    167.456 us    172.271 us 
+                                        10.3948 us    5.35759 us    21.3899 us 
+                                                                               
+
+1.664 s: mul_bb31
+===============================================================================
+All tests passed (166 assertions in 21 test cases)
+
+Randomness seeded to: 597106364
+26.032 s: sumcheck 20 vars
+110.682 s: sumcheck 24 vars
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sumcheck_test is a Catch2 v3.5.0 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+sumcheck 28 vars
+-------------------------------------------------------------------------------
+/kaggle/working/binius-NTT/binius-NTT/src/ulvt/sumcheck/test/test.cu:131
+...............................................................................
+
+/kaggle/working/binius-NTT/binius-NTT/src/ulvt/sumcheck/test/test.cu:49: FAILED:
+  REQUIRE( sum_bigint == (points_bigint_arr[0] ^ points_bigint_arr[1]) )
+with expansion:
+  {?} == {?}
+
+0.000 s: sumcheck 28 vars
+===============================================================================
+test cases:   3 |   2 passed | 1 failed
+assertions: 670 | 669 passed | 1 failed
