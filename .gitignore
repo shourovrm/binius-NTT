@@ -6,4 +6,17 @@ cmake-build-debug/
 compile_commands.json
 *.inp
 *.out
-*.out
+
+# Build directories
+build/
+cmake-build-*/
+
+# Downloaded dependencies
+third-party/Catch2/
+third-party/nvbench/
+
+# IDE and tools
+.DS_Store
+*.swp
+*.swo
+*~
