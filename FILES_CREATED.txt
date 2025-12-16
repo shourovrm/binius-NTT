@@ -1,0 +1,45 @@
+═══════════════════════════════════════════════════════════════════════════════
+                    PHASE 1 ANTT OPTIMIZATION - FILE MANIFEST
+═══════════════════════════════════════════════════════════════════════════════
+
+IMPLEMENTATION FILES:
+  src/ulvt/ntt/modified_antt.cuh              14 KB  Phase 1 optimized NTT
+  src/ulvt/ntt/tests/benchmark_antt.cu        10 KB  Comparison benchmark
+
+BUILD & RUN SCRIPTS:
+  run_antt_benchmark.sh                      1.2 KB  Quick build + run
+  profile_antt.sh                            2.0 KB  Nsight profiling
+
+DOCUMENTATION:
+  QUICK_START.md                             5.5 KB  Fast start guide
+  BENCHMARK_DETAILS.md                       6.1 KB  Test methodology
+  BENCHMARK_UPDATE.md                        3.0 KB  What changed
+  ANTT_OPTIMIZATION_README.md                4.9 KB  Complete guide
+  IMPLEMENTATION_SUMMARY.md                  6.9 KB  Implementation details
+  GIT_COMMIT_CHECKLIST.md                    4.5 KB  Git workflow
+
+MODIFIED:
+  CMakeLists.txt                                     Added antt_benchmark target
+
+BACKUP:
+  src/ulvt/ntt/tests/benchmark_antt.cu.backup 6.7 KB  Old benchmark version
+
+═══════════════════════════════════════════════════════════════════════════════
+
+QUICK COMMANDS:
+
+  # View any doc
+  cat QUICK_START.md
+  cat BENCHMARK_DETAILS.md
+  cat ANTT_OPTIMIZATION_README.md
+
+  # Run benchmark
+  ./run_antt_benchmark.sh
+
+  # Profile
+  ./profile_antt.sh
+
+  # Commit
+  See GIT_COMMIT_CHECKLIST.md
+
+═══════════════════════════════════════════════════════════════════════════════

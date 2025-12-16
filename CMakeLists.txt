@@ -94,6 +94,13 @@ target_link_libraries(ntt_tests PRIVATE ulvt_gpu Catch2::Catch2WithMain)
 target_compile_options(ntt_tests PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:--generate-line-info --use_fast_math --relocatable-device-code=true>)
 set_target_properties(ntt_tests PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 
+# ANTT Benchmark (standalone)
+add_executable(antt_benchmark "./src/ulvt/ntt/tests/benchmark_antt.cu")
+target_link_libraries(antt_benchmark PRIVATE ulvt_gpu)
+target_include_directories(antt_benchmark PRIVATE "./src")
+target_compile_options(antt_benchmark PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:--generate-line-info --use_fast_math --relocatable-device-code=true>)
+set_target_properties(antt_benchmark PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+
 add_executable(finite_field_tests ${finite_field_test_srcs})
 target_link_libraries(finite_field_tests PRIVATE ulvt_gpu Catch2::Catch2WithMain)
 target_compile_options(finite_field_tests PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:--generate-line-info --use_fast_math --relocatable-device-code=true>)

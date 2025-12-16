@@ -1,0 +1,185 @@
+// Benchmark comparing original vs modified Additive NTT
+// Run with: ./antt_benchmark
+
+#include <chrono>
+#include <iostream>
+#include <iomanip>
+#include <random>
+
+#include "ulvt/ntt/additive_ntt.cuh"
+#include "ulvt/ntt/modified_antt.cuh"
+#include "ulvt/finite_fields/fan_paar_tower_field.cuh"
+#include "md5.cuh"
+
+// Hash reference values for correctness check
+extern const uint8_t additive_ntt_hashes[3][31][16];
+
+template<int LOG_RATE>
+struct BenchmarkResult {
+    int log_h;
+    double original_time_ms;
+    double modified_time_ms;
+    double speedup;
+    bool correctness_passed;
+};
+
+template<int LOG_RATE>
+bool run_and_benchmark_ntt(int log_h, BenchmarkResult<LOG_RATE>& result) {
+    std::mt19937 gen(0xdeadbeef + log_h + LOG_RATE);
+    auto inp_size = 1 << log_h;
+    auto out_size = 1 << (log_h + LOG_RATE);
+    
+    NTTData<uint32_t> ntt_inp(DataOrder::IN_ORDER, inp_size);
+    for (size_t i = 0; i < inp_size; i++) {
+        ntt_inp.data[i] = gen();
+    }
+
+    result.log_h = log_h;
+    
+    // ========== ORIGINAL ADDITIVE NTT ==========
+    {
+        AdditiveNTTConf<uint32_t, FanPaarTowerField<5>> nttconf(log_h, LOG_RATE);
+        AdditiveNTT<uint32_t, FanPaarTowerField<5>> add_ntt(nttconf);
+        NTTData<uint32_t> ntt_out_orig(out_size);
+        
+        // Warm-up run
+        add_ntt.apply(ntt_inp, ntt_out_orig);
+        cudaDeviceSynchronize();
+        
+        // Timed run
+        auto start = std::chrono::high_resolution_clock::now();
+        bool success = add_ntt.apply(ntt_inp, ntt_out_orig);
+        cudaDeviceSynchronize();
+        auto end = std::chrono::high_resolution_clock::now();
+        
+        if (!success) {
+            std::cerr << "Original NTT failed for log_h=" << log_h << std::endl;
+            return false;
+        }
+        
+        result.original_time_ms = std::chrono::duration<double, std::milli>(end - start).count();
+        
+        // Verify correctness with MD5 hash
+        MD5Context md5;
+        md5Init(&md5);
+        for (size_t i = 0; i < ntt_out_orig.size; i++) {
+            uint32_t d = ntt_out_orig.data[i];
+            md5Update(&md5, (uint8_t*)&d, 4);
+        }
+        md5Finalize(&md5);
+        
+        bool hash_match = (memcmp(md5.digest, additive_ntt_hashes[LOG_RATE][log_h], 16) == 0);
+        if (!hash_match) {
+            std::cerr << "Original NTT hash mismatch for log_h=" << log_h << std::endl;
+            result.correctness_passed = false;
+            return false;
+        }
+    }
+    
+    // ========== MODIFIED ADDITIVE NTT ==========
+    {
+        AdditiveNTTConf<uint32_t, FanPaarTowerField<5>> nttconf(log_h, LOG_RATE);
+        ModifiedAdditiveNTT<uint32_t, FanPaarTowerField<5>> mod_ntt(nttconf, true);
+        NTTData<uint32_t> ntt_out_mod(out_size);
+        
+        // Warm-up run
+        mod_ntt.apply(ntt_inp, ntt_out_mod);
+        cudaDeviceSynchronize();
+        
+        // Timed run
+        auto start = std::chrono::high_resolution_clock::now();
+        bool success = mod_ntt.apply(ntt_inp, ntt_out_mod);
+        cudaDeviceSynchronize();
+        auto end = std::chrono::high_resolution_clock::now();
+        
+        if (!success) {
+            std::cerr << "Modified NTT failed for log_h=" << log_h << std::endl;
+            return false;
+        }
+        
+        result.modified_time_ms = std::chrono::duration<double, std::milli>(end - start).count();
+        
+        // Verify correctness with MD5 hash
+        MD5Context md5;
+        md5Init(&md5);
+        for (size_t i = 0; i < ntt_out_mod.size; i++) {
+            uint32_t d = ntt_out_mod.data[i];
+            md5Update(&md5, (uint8_t*)&d, 4);
+        }
+        md5Finalize(&md5);
+        
+        bool hash_match = (memcmp(md5.digest, additive_ntt_hashes[LOG_RATE][log_h], 16) == 0);
+        if (!hash_match) {
+            std::cerr << "Modified NTT hash mismatch for log_h=" << log_h << std::endl;
+            result.correctness_passed = false;
+            return false;
+        }
+    }
+    
+    result.speedup = result.original_time_ms / result.modified_time_ms;
+    result.correctness_passed = true;
+    return true;
+}
+
+int main() {
+    std::cout << "\n========================================" << std::endl;
+    std::cout << "  Additive NTT Benchmark Comparison" << std::endl;
+    std::cout << "  Original vs Modified (Phase 1 Opts)" << std::endl;
+    std::cout << "========================================\n" << std::endl;
+    
+    // Test LOG_RATE = 0 (most common case)
+    std::cout << "Testing LOG_RATE = 0\n" << std::endl;
+    std::cout << std::setw(8) << "log_h" 
+              << std::setw(15) << "Original (ms)" 
+              << std::setw(15) << "Modified (ms)" 
+              << std::setw(12) << "Speedup" 
+              << std::setw(12) << "Status" << std::endl;
+    std::cout << std::string(62, '-') << std::endl;
+    
+    double total_speedup = 0.0;
+    int num_tests = 0;
+    
+    // Test range: 10 to 20 (reasonable sizes for quick feedback)
+    for (int log_h = 10; log_h <= 20; log_h++) {
+        BenchmarkResult<0> result;
+        bool success = run_and_benchmark_ntt<0>(log_h, result);
+        
+        if (success) {
+            std::cout << std::setw(8) << log_h
+                      << std::setw(15) << std::fixed << std::setprecision(3) << result.original_time_ms
+                      << std::setw(15) << std::fixed << std::setprecision(3) << result.modified_time_ms
+                      << std::setw(11) << std::fixed << std::setprecision(2) << result.speedup << "x"
+                      << std::setw(12) << (result.correctness_passed ? "PASS" : "FAIL")
+                      << std::endl;
+            
+            total_speedup += result.speedup;
+            num_tests++;
+        } else {
+            std::cout << std::setw(8) << log_h
+                      << std::setw(42) << "FAILED"
+                      << std::endl;
+        }
+    }
+    
+    std::cout << std::string(62, '-') << std::endl;
+    if (num_tests > 0) {
+        double avg_speedup = total_speedup / num_tests;
+        std::cout << "Average Speedup: " << std::fixed << std::setprecision(2) 
+                  << avg_speedup << "x" << std::endl;
+        
+        if (avg_speedup > 1.0) {
+            double improvement = (avg_speedup - 1.0) * 100.0;
+            std::cout << "Performance Improvement: " << std::fixed << std::setprecision(1) 
+                      << improvement << "%" << std::endl;
+        }
+    }
+    
+    std::cout << "\n========================================" << std::endl;
+    std::cout << "Phase 1 Optimizations Applied:" << std::endl;
+    std::cout << "  1. Pre-computed twiddle factors" << std::endl;
+    std::cout << "  2. Texture memory caching" << std::endl;
+    std::cout << "  3. __ldg() for read-only loads" << std::endl;
+    std::cout << "========================================\n" << std::endl;
+    
+    return 0;
+}
