@@ -6,5 +6,4 @@ cmake-build-debug/
 compile_commands.json
 *.inp
 *.out
-*.sh
 *.out
